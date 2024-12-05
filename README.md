@@ -2,7 +2,7 @@
 
 ## Initialize Project
 
-*Prequisits*
+*Prerequisites*
 - maven
 
 ```bash
