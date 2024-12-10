@@ -154,7 +154,7 @@
   <repositories>
 
     <repository>
-      <id>gh-custom-annotations</id>
+      <id>github</id>
       <name>GitHub Packages - dmfrey/custom-annotations</name>
       <url>https://maven.pkg.github.com/dmfrey</url>
     </repository>
