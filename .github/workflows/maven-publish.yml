@@ -24,9 +24,15 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -s settings.xml -B package --file pom.xml
+      env:
+        GITHUB_USERNAME: ${{ github.actor }}
+        GITHUB_TOKEN: ${{ github.token }}
+        GH_CUSTOM_ANNOTATIONS_TOKEN: ${{ secrets.GH_CUSTOM_ANNOTATIONS_TOKEN }}
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn --batch-mode deploy
+      run: mvn -s settings.xml --batch-mode deploy
       env:
+        GITHUB_USERNAME: ${{ github.actor }}
         GITHUB_TOKEN: ${{ github.token }}
+        GH_CUSTOM_ANNOTATIONS_TOKEN: ${{ secrets.GH_CUSTOM_ANNOTATIONS_TOKEN }}
