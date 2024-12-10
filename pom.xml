@@ -156,7 +156,7 @@
     <repository>
       <id>github</id>
       <name>GitHub Packages - dmfrey/custom-annotations</name>
-      <url>https://maven.pkg.github.com/dmfrey</url>
+      <url>https://maven.pkg.github.com/dmfrey/custom-annotations</url>
     </repository>
 
   </repositories>
