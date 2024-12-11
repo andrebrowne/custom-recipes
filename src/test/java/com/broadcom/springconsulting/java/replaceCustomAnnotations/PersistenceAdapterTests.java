@@ -1,6 +1,7 @@
 package com.broadcom.springconsulting.java.replaceCustomAnnotations;
 
 import org.junit.jupiter.api.Test;
+import org.openrewrite.InMemoryExecutionContext;
 import org.openrewrite.java.JavaParser;
 import org.openrewrite.test.RecipeSpec;
 import org.openrewrite.test.RewriteTest;
@@ -15,10 +16,11 @@ public class PersistenceAdapterTests implements RewriteTest {
         spec.recipe( new ReplacePersistenceAdapterRecipe() )
                 .allSources( s -> s.markers( javaVersion( 17 ) ) )
                 .parser( JavaParser.fromJavaVersion()
-                        .classpath(
-                                "custom-annotations",
-                                "spring-context"
-                        ));
+                        .classpathFromResources(
+                                new InMemoryExecutionContext(),
+                                "spring-context-6.1.*", "custom-annotations-1.*"
+                        )
+                );
 
     }
 

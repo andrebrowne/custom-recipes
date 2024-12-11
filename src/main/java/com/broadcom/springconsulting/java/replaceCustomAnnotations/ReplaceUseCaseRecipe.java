@@ -61,7 +61,7 @@ public class ReplaceUseCaseRecipe extends Recipe {
                                 JavaTemplate.builder("@Service" )
                                         .javaParser(
                                                 JavaParser.fromJavaVersion()
-                                                        .classpath( "spring-context" )
+                                                        .classpathFromResources( ctx, "spring-context-6.1.*" )
                                         )
                                         .imports( IMPORT_STATEMENT )
                                         .build();

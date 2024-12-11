@@ -61,7 +61,7 @@ public class ReplaceEndpointAdapterRecipe extends Recipe {
                                 JavaTemplate.builder("@RestController" )
                                         .javaParser(
                                                 JavaParser.fromJavaVersion()
-                                                        .classpath( "spring-web" )
+                                                        .classpathFromResources( ctx,"spring-web-6.1.*" )
                                         )
                                         .imports( IMPORT_STATEMENT )
                                         .build();

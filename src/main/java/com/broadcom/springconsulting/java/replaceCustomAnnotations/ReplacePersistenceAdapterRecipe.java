@@ -61,7 +61,7 @@ public class ReplacePersistenceAdapterRecipe extends Recipe {
                                 JavaTemplate.builder("@Repository" )
                                         .javaParser(
                                                 JavaParser.fromJavaVersion()
-                                                        .classpath( "spring-context" )
+                                                        .classpathFromResources( ctx,"spring-context-6.1.*" )
                                         )
                                         .imports( IMPORT_STATEMENT )
                                         .build();
