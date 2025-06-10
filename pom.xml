@@ -6,17 +6,17 @@
 
   <groupId>com.broadcom.springconsulting</groupId>
   <artifactId>custom-recipes</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>custom-recipes</name>
 
-  <url>https://github.com/dmfrey/custom-recipes</url>
+  <url>https://github.com/andrebrowne/custom-recipes</url>
 
   <distributionManagement>
     <repository>
       <id>github</id>
       <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/dmfrey/custom-recipes</url>
+      <url>https://maven.pkg.github.com/andrebrowne/custom-recipes</url>
     </repository>
   </distributionManagement>
 
@@ -128,8 +128,8 @@
 
     <repository>
       <id>github</id>
-      <name>GitHub Packages - dmfrey/custom-annotations</name>
-      <url>https://maven.pkg.github.com/dmfrey/custom-annotations</url>
+      <name>GitHub Packages - andrebrowne/custom-annotations</name>
+      <url>https://maven.pkg.github.com/andrebrowne/custom-annotations</url>
     </repository>
 
   </repositories>
@@ -137,10 +137,6 @@
   <build>
 
     <plugins>
-
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-      </plugin>
 
       <!-- lombok is optional, but recommended for authoring recipes -->
       <plugin>
@@ -156,6 +152,9 @@
           </annotationProcessorPaths>
           <source>9</source>
           <target>9</target>
+          <compilerArgs>
+              <arg>-parameters</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
 
@@ -182,7 +181,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
+          <version>3.5.3</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -205,11 +204,6 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M9</version>
         </plugin>
 
       </plugins>
